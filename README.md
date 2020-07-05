@@ -1,19 +1,7 @@
-# league-ui-doc
+# League UI Documentation
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+&nbsp;&nbsp;&nbsp;&nbsp;This repo is the official documentation website for [League UI](https://github.com/yingjieweb/league-ui).
+It mainly shows you some basic component usage. [Click here to view it](https://github.com/yingjieweb/league-ui).
+ 
+ ## Screenshot
+ ![](shot/home.png)
