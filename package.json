@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "reinstall": "npm uninstall league-ui && npm install league-ui"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "highlight.js": "^10.1.1",
+    "league-ui": "0.0.7",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },
