@@ -1,53 +1,25 @@
 export default {
   basic: `
-<label>
-    Name
-    <lol-input></lol-input>
-</label>`,
+Bind String: <lol-input value="Hello League UI !"></lol-input>
+Bind Variable: <lol-input :value="true"></lol-input>`,
+  placeholder: `
+Placeholder: <lol-input placeholder="placeholder"></lol-input>`,
+  disabledAndReadonly: `
+Disabled: <lol-input value="Hello League UI !" disabled></lol-input>
+Readonly: <lol-input :value="true" readonly></lol-input>`,
   hint: `
-<lol-input
-    class="input"
-    value="Password"
-    placeholder="password"
-    icon-name="check"
-    hint="Success: Valid Password."
-    hintType="success">
-</lol-input>
-<lol-input
-    class="input"
-    value="Password"
-    placeholder="password"
-    icon-name="cancel"
-    hint="Error: Invalid Password."
-    hintType="danger">
-</lol-input>
-<lol-input
-    class="input"
-    value="Password"
-    placeholder="password"
-    icon-name="warning"
-    hint="Warn: Password is easy to guess."
-    hintType="warning">
-</lol-input>
-<lol-input
-    class="input"
-    value="Password"
-    placeholder="password"
-    icon-name="notification"
-    hint="Info: Keep typing password."
-    hintType="info">
-</lol-input>`,
+<lol-input icon-name="right" hint="Success" hint-type="success"></lol-input>
+<lol-input icon-name="info" hint="Info" hint-type="info"></lol-input>
+<lol-input icon-name="warning" hint="Warning" hint-type="warning"></lol-input>
+<lol-input icon-name="error" hint="Danger" hint-type="danger"></lol-input>`,
   twoWayBindingHtml: `
-<lol-input
-    v-model="text"
-    placeholder="password">
-</lol-input>
+<lol-input v-model="text"></lol-input>
 
 <p>Result: {{text}}</p>`,
   twoWayBindingJs: `
 data() {
     return {
-        text: 'Hello World'
+        text: 'Hello League UI !'
     }
 }`
 }

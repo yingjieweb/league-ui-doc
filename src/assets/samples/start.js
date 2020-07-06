@@ -22,13 +22,13 @@ new Vue({
     render: h => h(App)
 }).$mount('#app')`,
     basicHtml: `
-<lol-button type="info">Info</lol-button>
 <lol-button type="primary">Primary</lol-button>
 <lol-button type="success">Success</lol-button>
+<lol-button type="info">Info</lol-button>
 <lol-button type="warning">Warning</lol-button>
 <lol-button type="danger">Danger</lol-button>
 
-<lol-popover position="top">
+<lol-popover position="right">
     <template slot="content">
         <div>Hello, League UI!</div>
     </template>
