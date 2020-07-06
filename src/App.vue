@@ -1,32 +1,64 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <!--Background-->
+    <div class="background">
+      <!--<router-view></router-view>-->
     </div>
-    <router-view/>
+
+    <LolContainer>
+      <!--Left hand side nav-->
+      <LolSider class="app-sider">
+        <DocNav class="doc-nav"></DocNav>
+      </LolSider>
+
+      <!--Right hand side documents-->
+      <LolContainer class="app-content-wrapper">
+        <LolContent>
+          <router-view></router-view>
+        </LolContent>
+        <LolFooter></LolFooter>
+      </LolContainer>
+
+    </LolContainer>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import DocNav from "./components/frame/DocNav"
+  import {LolContainer, LolHeader, LolSider, LolContent, LolFooter} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  export default {
+    name: 'App',
+    components: {
+      DocNav,
+      LolContainer, LolHeader, LolSider, LolContent, LolFooter
     }
   }
-}
+</script>
+
+<style lang="scss">
+  #app {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+
+    .background {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: url("assets/images/bg.jpg") no-repeat center;
+      background-size: cover;
+    }
+    .app-sider {
+      display: none;
+      @include pc {
+        display: block;
+      }
+      @include tablet {
+        display: block;
+      }
+    }
+    .app-content-wrapper {
+      width: 100%;
+    }
+  }
 </style>
