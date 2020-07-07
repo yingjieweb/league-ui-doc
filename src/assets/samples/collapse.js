@@ -1,23 +1,28 @@
 export default {
   basicHtml: `
-<lol-collapse-group :selected.sync="selectedCollapse">
-    <lol-collapse title="Title1" name="1"> <div>Content 1</div> </lol-collapse>
-    <lol-collapse title="Title2" name="2"> <div>Content 2</div> </lol-collapse>
-    <lol-collapse title="Title3" name="3"> <div>Content 3</div> </lol-collapse>
-</lol-collapse-group>
-<span>You select: {{selectedCollapse}}</span>`,
-  basicJs: `
+<lol-collapse :selected.sync="selectedCollapseItem">
+    <lol-collapse-item title="Title1" name="1">Content 1</lol-collapse-item>
+    <lol-collapse-item title="Title2" name="2">Content 2</lol-collapse-item>
+    <lol-collapse-item title="Title3" name="3">Content 3</lol-collapse-item>
+</lol-collapse>
+<span>You select: {{selectedCollapseItem}}</span>`,
+  basicJs1: `
 data() {
     return {
-        sample,
-        selectedCollapse: ['1', '2']
+        selectedCollapseItem: ['1', '2']
     }
 }`,
   single: `
-<lol-collapse-group :selected.sync="selectedCollapse" :multiSelect="false">
-    <lol-collapse title="Title1" name="1"> <div>Content 1</div> </lol-collapse>
-    <lol-collapse title="Title2" name="2"> <div>Content 2</div> </lol-collapse>
-    <lol-collapse title="Title3" name="3"> <div>Content 3</div> </lol-collapse>
-</lol-collapse-group>
-<span>You are selecting: {{selectedCollapse}}</span>`
+<lol-collapse :selected.sync="selectedCollapseItem" :multiSelect="false">
+    <lol-collapse-item title="Title1" name="1">Content 1</lol-collapse-item>
+    <lol-collapse-item title="Title2" name="2">Content 2</lol-collapse-item>
+    <lol-collapse-item title="Title3" name="3">Content 3</lol-collapse-item>
+</lol-collapse>
+<span>You are selecting: {{selectedCollapseItem}}</span>`,
+  basicJs2: `
+data() {
+    return {
+        selectedCollapseItem: ['1']
+    }
+}`
 }
