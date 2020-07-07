@@ -35,10 +35,10 @@
       <!--Hint-->
       <h2>Hint</h2>
       <div class="sample">
-        <lol-input icon-name="right" hint="Success" hint-type="success"></lol-input>
-        <lol-input icon-name="info" hint="Info" hint-type="info"></lol-input>
-        <lol-input icon-name="warning" hint="Warning" hint-type="warning"></lol-input>
-        <lol-input icon-name="error" hint="Danger" hint-type="danger"></lol-input>
+        <lol-input icon-name="check-fill" hint="Success" hint-type="success"></lol-input>
+        <lol-input icon-name="notice-fill" hint="Info" hint-type="info"></lol-input>
+        <lol-input icon-name="warn-fill" hint="Warning" hint-type="warning"></lol-input>
+        <lol-input icon-name="close-fill" hint="Danger" hint-type="danger"></lol-input>
       </div>
       <pre>
         <code class="html">{{sample.hint}}</code>

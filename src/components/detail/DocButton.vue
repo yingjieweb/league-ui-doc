@@ -23,7 +23,7 @@
       <p>You can add an icon inside the button.</p>
       <div class="samples">
         <lol-button class="item" type="primary" icon-name="setting">Setting</lol-button>
-        <lol-button class="item" type="danger" icon-name="remove">Remove</lol-button>
+        <lol-button class="item" type="danger" icon-name="delete">Delete</lol-button>
       </div>
       <pre>
         <code class="html">{{sample.icon}}</code>
