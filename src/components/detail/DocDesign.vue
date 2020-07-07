@@ -102,7 +102,7 @@
           require('../../assets/images/jarvanvi.jpg'),
           require('../../assets/images/nidalee.jpg'),
           require('../../assets/images/yuumi.jpg'),
-          require('../../assets/images/lucian.jpg')
+          require('../../assets/images/irelia.jpg')
         ]
       }
     }
