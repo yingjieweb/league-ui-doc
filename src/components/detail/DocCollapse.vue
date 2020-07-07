@@ -23,7 +23,7 @@
 
       <!--Single Select-->
       <h2>Single Select</h2>
-      <p>You can enable only one OwCollapse to expand. You can't define the selected array that has more than 1 element.</p>
+      <p>You can enable only one LolCollapseItem to expand. You can't define the selected array that has more than 1 element.</p>
       <div class="sample">
         <lol-collapse :selected.sync="selectedCollapse2" :multiSelect="false">
           <lol-collapse-item title="Title1" name="1">Content 1</lol-collapse-item>
