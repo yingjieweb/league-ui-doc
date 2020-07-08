@@ -16,6 +16,7 @@ import DocIcon from "../components/detail/DocIcon"
 import DocButton from "../components/detail/DocButton"
 import DocInput from "../components/detail/DocInput"
 import DocPopover from "../components/detail/DocPopover"
+import DocTabs from "../components/detail/DocTabs"
 import DocCollapse from "../components/detail/DocCollapse"
 
 
@@ -79,6 +80,11 @@ const routes = [
     path: '/components/popover',
     name: 'popover',
     component: DocPopover
+  },
+  {
+    path: '/components/tabs',
+    name: 'tabs',
+    component: DocTabs
   },
   {
     path: '/components/collapse',

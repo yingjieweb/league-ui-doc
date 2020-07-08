@@ -67,14 +67,14 @@
               {title: 'Popover', url: '/components/popover'}
             ]
           },
-          // {
-          //     type: 'NAVIGATION',
-          //     urls: [
-          //         {title: 'Nav', url: '/components/nav'},
-          //         {title: 'Tabs', url: '/components/tabs'},
-          //         {title: 'Carousel', url: '/components/carousel'}
-          //     ]
-          // },
+          {
+              type: 'NAVIGATION',
+              urls: [
+                  // {title: 'Nav', url: '/components/nav'},
+                  {title: 'Tabs', url: '/components/tabs'},
+                  // {title: 'Carousel', url: '/components/carousel'}
+              ]
+          },
           {
             type: 'DATA',
             urls: [
