@@ -62,7 +62,7 @@
           {
             type: 'MESSAGE',
             urls: [
-              // {title: 'Alert', url: '/components/alert'},
+              {title: 'Toast', url: '/components/toast'},
               // {title: 'Modal', url: '/components/modal'},
               {title: 'Popover', url: '/components/popover'}
             ]
