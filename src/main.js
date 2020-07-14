@@ -6,32 +6,16 @@ import DocPost from "./components/frame/DocPost"
 
 Vue.config.productionTip = false
 
-import {
-  LolIcon,
-  LolButton, LolButtonGroup,
-  LolInput,
-  LolRow, LolCol,
-  LolContainer, LolHeader, LolSider, LolContent, LolFooter,
-  LolToast,
-  LolTabs, LolTabsHead, LolTabsItem, LolTabsBody, LolTabsPane,
-  LolPopover,
-  LolCollapse, LolCollapseItem
-} from 'league-ui'
-// import 'league-ui/dist/index.css'
+import LeagueUI from 'league-ui'
+import 'league-ui/dist/league-ui.css'
+
+Vue.use(LeagueUI.plugins.$lolToast)
 
 Vue.component('doc-post', DocPost)
 
 new Vue({
   components: {
-    LolIcon,
-    LolButton, LolButtonGroup,
-    LolInput,
-    LolRow, LolCol,
-    LolContainer, LolHeader, LolSider, LolContent, LolFooter,
-    LolToast,
-    LolTabs, LolTabsHead, LolTabsItem, LolTabsBody, LolTabsPane,
-    LolPopover,
-    LolCollapse, LolCollapseItem
+    ...LeagueUI.Components
   },
   router,
   render: h => h(App)

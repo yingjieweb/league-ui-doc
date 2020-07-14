@@ -25,14 +25,11 @@
 
 <script>
   import DocNav from "./components/frame/DocNav"
-  import {LolContainer, LolHeader, LolSider, LolContent, LolFooter} from 'league-ui'
-  // import 'league-ui/dist/index.css'
 
   export default {
     name: 'App',
     components: {
-      DocNav,
-      LolContainer, LolHeader, LolSider, LolContent, LolFooter
+      DocNav
     }
   }
 </script>

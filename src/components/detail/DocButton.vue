@@ -104,14 +104,14 @@
 
 <script>
   import sample from "../../assets/samples/button"
-  import {LolButton, LolButtonGroup} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolButton, LolButtonGroup} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocButton",
     components: {
-      'lol-button': LolButton,
-      'lol-button-group': LolButtonGroup
+      // 'lol-button': LolButton,
+      // 'lol-button-group': LolButtonGroup
     },
     data() {
       return {

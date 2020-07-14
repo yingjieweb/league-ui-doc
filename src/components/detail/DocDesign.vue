@@ -82,15 +82,15 @@
 </template>
 
 <script>
-  import {LolButton, LolRow, LolCol} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolButton, LolRow, LolCol} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocDesign",
     components: {
-      'lol-button': LolButton,
-      'lol-row': LolRow,
-      'lol-col': LolCol,
+      // 'lol-button': LolButton,
+      // 'lol-row': LolRow,
+      // 'lol-col': LolCol,
     },
     data() {
       return {

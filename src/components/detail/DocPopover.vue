@@ -127,14 +127,14 @@
 
 <script>
   import sample from "../../assets/samples/popover"
-  import {LolPopover, LolButton} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolPopover, LolButton} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocPopover",
     components: {
-      'lol-popover': LolPopover,
-      'lol-button': LolButton
+      // 'lol-popover': LolPopover,
+      // 'lol-button': LolButton
     },
     data() {
       return {

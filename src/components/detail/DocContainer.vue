@@ -87,18 +87,18 @@
 
 <script>
   import sample from "../../assets/samples/container"
-  import {LolContainer, LolHeader, LolSider, LolContent, LolFooter, LolButton} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolContainer, LolHeader, LolSider, LolContent, LolFooter, LolButton} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocContainer",
     components: {
-      'lol-container': LolContainer,
-      'lol-header': LolHeader,
-      'lol-sider': LolSider,
-      'lol-content': LolContent,
-      'lol-footer': LolFooter,
-      'lol-button': LolButton
+      // 'lol-container': LolContainer,
+      // 'lol-header': LolHeader,
+      // 'lol-sider': LolSider,
+      // 'lol-content': LolContent,
+      // 'lol-footer': LolFooter,
+      // 'lol-button': LolButton
     },
     data() {
       return {

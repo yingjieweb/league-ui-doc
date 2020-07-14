@@ -119,14 +119,14 @@
 
 <script>
   import sample from "../../assets/samples/layout"
-  import {LolRow, LolCol} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolRow, LolCol} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocLayout",
     components: {
-      'lol-row': LolRow,
-      'lol-col': LolCol
+      // 'lol-row': LolRow,
+      // 'lol-col': LolCol
     },
     data() {
       return {

@@ -8,10 +8,11 @@ $ npm install league-ui --save`,
 importing: `
 // Import the library
 import LeagueUI from 'league-ui'
-import 'league-ui/dist/index.css'
+import 'league-ui/dist/league-ui.css'
+
 
 // Use some plugins
-Vue.use(LeagueUI.plugins.$lolAlert)
+Vue.use(LeagueUI.plugins.$lolToast)
 
 // Register components that you need in the root component
 new Vue({

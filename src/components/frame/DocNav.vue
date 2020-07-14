@@ -29,17 +29,12 @@
   import DocSubMenu from './DocSubMenu'
   // import DocBoard from './DocBoard'
 
-  import {LolButton} from 'league-ui'
-  //import 'league-ui/dist/index.css'
-
   export default {
     name: "DocNav",
     components: {
       DocMenu,
       DocSubMenu,
-      // DocBoard,
-
-      'lol-button': LolButton
+      // DocBoard
     },
     data() {
       return {

@@ -60,14 +60,14 @@
 
 <script>
   import sample from "../../assets/samples/collapse"
-  import {LolCollapse, LolCollapseItem} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolCollapse, LolCollapseItem} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocCollapse",
     components: {
-      'lol-collapse': LolCollapse,
-      'lol-collapse-item': LolCollapseItem
+      // 'lol-collapse': LolCollapse,
+      // 'lol-collapse-item': LolCollapseItem
     },
     data() {
       return {

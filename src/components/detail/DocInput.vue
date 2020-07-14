@@ -7,7 +7,6 @@
       <h2>Basic</h2>
       <div class="sample">
         Bind String: <lol-input value="Hello League UI !"></lol-input>
-        Bind Variable: <lol-input :value="true"></lol-input>
       </div>
       <pre>
         <code class="html">{{sample.basic}}</code>
@@ -26,7 +25,7 @@
       <h2>Disabled and Readonly</h2>
       <div class="sample">
         Disabled: <lol-input value="Hello League UI !" disabled></lol-input>
-        Readonly: <lol-input :value="true" readonly></lol-input>
+        Readonly: <lol-input value="It's Readonly" readonly></lol-input>
       </div>
       <pre>
         <code class="html">{{sample.disabledAndReadonly}}</code>
@@ -100,13 +99,13 @@
 
 <script>
   import sample from "../../assets/samples/input"
-  import {LolInput} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolInput} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocInput",
     components: {
-      'lol-input': LolInput
+      // 'lol-input': LolInput
     },
     data() {
       return {

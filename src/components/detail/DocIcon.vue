@@ -71,15 +71,15 @@
 
 <script>
   import sample from "../../assets/samples/icon"
-  import {LolIcon} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolIcon} from 'league-ui'
+  // import 'league-ui/dist/index.css'
   import hljs from 'highlight.js'
 
 
   export default {
     name: "DocIcon",
     components: {
-      'lol-icon': LolIcon
+      // 'lol-icon': LolIcon
     },
     data() {
       return {

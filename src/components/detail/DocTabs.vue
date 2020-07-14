@@ -104,19 +104,19 @@
 
 <script>
   import sample from "../../assets/samples/tabs"
-  import {LolTabs, LolTabsHead, LolTabsItem, LolTabsBody, LolTabsPane, LolButton} from 'league-ui'
-  import 'league-ui/dist/index.css'
+  // import {LolTabs, LolTabsHead, LolTabsItem, LolTabsBody, LolTabsPane, LolButton} from 'league-ui'
+  // import 'league-ui/dist/index.css'
 
 
   export default {
     name: "DocTabs",
     components: {
-      'lol-tabs': LolTabs,
-      'lol-tabs-head': LolTabsHead,
-      'lol-tabs-item': LolTabsItem,
-      'lol-tabs-body': LolTabsBody,
-      'lol-tabs-pane': LolTabsPane,
-      'lol-button': LolButton
+      // 'lol-tabs': LolTabs,
+      // 'lol-tabs-head': LolTabsHead,
+      // 'lol-tabs-item': LolTabsItem,
+      // 'lol-tabs-body': LolTabsBody,
+      // 'lol-tabs-pane': LolTabsPane,
+      // 'lol-button': LolButton
     },
     data() {
       return {

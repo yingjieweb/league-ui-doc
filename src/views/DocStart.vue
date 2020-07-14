@@ -46,14 +46,9 @@
 
 <script>
   import sample from "../assets/samples/start"
-  import {LolButton, LolPopover} from 'league-ui'
 
   export default {
     name: "DocStart",
-    components: {
-      'lol-button': LolButton,
-      'lol-popover': LolPopover
-    },
     data() {
       return {
         sample
