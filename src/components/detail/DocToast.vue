@@ -77,7 +77,7 @@
     },
     methods: {
       showToast(type) {
-        this.$toast({
+        this.$lolToast({
           type: type,
           message: 'This is a toast message!',
           closeButton: {

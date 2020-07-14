@@ -2,13 +2,13 @@ export default {
   importing: `
 import LeagueUI from 'league-ui'
 
-Vue.use(LeagueUI.plugins.$toast)`,
+Vue.use(LeagueUI.plugins.$lolToast)`,
   useHtml: `
 <lol-button type="primary" @click="showToast">Toast it</lol-button>`,
   useJs: `
 methods: {
     showToast() {
-        this.$toast({
+        this.$lolToast({
             type: 'loading',
             message: 'This is a toast message!',
             closeButton: {
@@ -29,7 +29,7 @@ methods: {
   typeJs: `
 methods: {
     showToast(type) {
-        this.$toast({
+        this.$lolToast({
             type: type,
             message: 'This is a toast message!',
             closeButton: {
