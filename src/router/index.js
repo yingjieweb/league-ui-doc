@@ -15,6 +15,7 @@ import DocDesign from "../components/detail/DocDesign"
 import DocIcon from "../components/detail/DocIcon"
 import DocButton from "../components/detail/DocButton"
 import DocInput from "../components/detail/DocInput"
+import DocCascader from "../components/detail/DocCascader"
 import DocToast from "../components/detail/DocToast"
 import DocPopover from "../components/detail/DocPopover"
 import DocTabs from "../components/detail/DocTabs"
@@ -76,6 +77,11 @@ const routes = [
     path: '/components/input',
     name: 'input',
     component: DocInput
+  },
+  {
+    path: '/components/cascader',
+    name: 'cascader',
+    component: DocCascader
   },
   {
     path: '/components/toast',

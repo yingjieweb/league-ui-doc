@@ -55,7 +55,7 @@
               // {title: 'Checkbox', url: '/components/checkbox'},
               // {title: 'DatePicker', url: '/components/date-picker'},
               // {title: 'Uploader', url: '/components/uploader'},
-              // {title: 'Cascader', url: '/components/cascader'},
+              {title: 'Cascader', url: '/components/cascader'},
               // {title: 'Validator', url: '/components/validator'}
             ]
           },
