@@ -22,9 +22,9 @@
           {
             type: 'LAYOUT',
             urls: [
-              {title: 'Container', url: '/components/container'},
-              {title: 'Layout', url: '/components/layout'},
               {title: 'Design', url: '/components/design'},
+              {title: 'Layout', url: '/components/layout'},
+              {title: 'Container', url: '/components/container'},
               // {title: 'Sticky', url: '/components/sticky'}
             ]
           },

@@ -46,7 +46,7 @@ const routes = [
   },
   {
     path: '/components',
-    redirect: '/components/container'
+    redirect: '/components/design'
   },
   {
     path: '/components/container',
