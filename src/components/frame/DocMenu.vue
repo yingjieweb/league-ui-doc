@@ -3,7 +3,7 @@
     <li v-for="menuItem in menu.mainItems" :key="menuItem.title" class="main-item-wrapper">
       <router-link class="main-item" :to="menuItem.url">
         <span class="title">{{menuItem.title}}</span>
-        <!--<ow-badge v-if="menuItem.isNew" title="NEW"></ow-badge>-->
+        <lol-badge v-if="menuItem.isNew" title="NEW"></lol-badge>
       </router-link>
     </li>
     <li v-for="menuItem in menu.subItems" :key="menuItem.title" class="sub-item-wrapper">
@@ -12,7 +12,7 @@
       </a>
       <router-link v-else class="sub-item" :to="menuItem.url">
         <span class="title">{{menuItem.title}}</span>
-        <!--<ow-badge v-if="menuItem.isNew" :is-dot="true"></ow-badge>-->
+        <lol-badge v-if="menuItem.isNew" :is-dot="true"></lol-badge>
       </router-link>
     </li>
   </ul>
