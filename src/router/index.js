@@ -13,6 +13,7 @@ import DocDesign from "../components/detail/DocDesign"
 import DocLayout from "../components/detail/DocLayout"
 import DocContainer from "../components/detail/DocContainer"
 import DocHero from "../components/detail/DocHero"
+import DocBadge from "../components/detail/DocBadge"
 import DocIcon from "../components/detail/DocIcon"
 import DocButton from "../components/detail/DocButton"
 import DocInput from "../components/detail/DocInput"
@@ -68,6 +69,11 @@ const routes = [
     path: '/components/hero',
     name: 'hero',
     component: DocHero
+  },
+  {
+    path: '/components/badge',
+    name: 'badge',
+    component: DocBadge
   },
   {
     path: '/components/icon',
