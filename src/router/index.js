@@ -9,9 +9,10 @@ import DocSocial from "../views/DocSocial"
 import DocPromotion from "../views/DocPromotion"
 
 // sub menu
-import DocContainer from "../components/detail/DocContainer"
-import DocLayout from "../components/detail/DocLayout"
 import DocDesign from "../components/detail/DocDesign"
+import DocLayout from "../components/detail/DocLayout"
+import DocContainer from "../components/detail/DocContainer"
+import DocHero from "../components/detail/DocHero"
 import DocIcon from "../components/detail/DocIcon"
 import DocButton from "../components/detail/DocButton"
 import DocInput from "../components/detail/DocInput"
@@ -49,9 +50,9 @@ const routes = [
     redirect: '/components/design'
   },
   {
-    path: '/components/container',
-    name: 'container',
-    component: DocContainer
+    path: '/components/design',
+    name: 'design',
+    component: DocDesign
   },
   {
     path: '/components/layout',
@@ -59,9 +60,14 @@ const routes = [
     component: DocLayout
   },
   {
-    path: '/components/design',
-    name: 'design',
-    component: DocDesign
+    path: '/components/container',
+    name: 'container',
+    component: DocContainer
+  },
+  {
+    path: '/components/hero',
+    name: 'hero',
+    component: DocHero
   },
   {
     path: '/components/icon',

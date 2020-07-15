@@ -28,14 +28,14 @@
               // {title: 'Sticky', url: '/components/sticky'}
             ]
           },
-          // {
-          //     type: 'GAME',
-          //     urls: [
-          //         {title: 'Hero', url: '/components/hero'},
-          //         {title: 'Blood', url: '/components/blood'},
-          //         {title: 'Badge', url: '/components/badge'}
-          //     ]
-          // },
+          {
+              type: 'GAME',
+              urls: [
+                  {title: 'Hero', url: '/components/hero'},
+                  // {title: 'Blood', url: '/components/blood'},
+                  // {title: 'Badge', url: '/components/badge'}
+              ]
+          },
           {
             type: 'BASIC',
             urls: [
