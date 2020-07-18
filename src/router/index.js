@@ -22,6 +22,7 @@ import DocToast from "../components/detail/DocToast"
 import DocPopover from "../components/detail/DocPopover"
 import DocTabs from "../components/detail/DocTabs"
 import DocCollapse from "../components/detail/DocCollapse"
+import NotFound from "../components/404/NotFound"
 
 
 Vue.use(VueRouter)
@@ -124,6 +125,10 @@ const routes = [
     path: '/promotion',
     name: 'promotion',
     component: DocPromotion
+  },
+  {
+    path: '*',
+    component: NotFound
   }
 ]
 
