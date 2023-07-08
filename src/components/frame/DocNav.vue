@@ -64,6 +64,7 @@
     background: transparent;
     padding-left: 3vw;
     padding-top: 3vh;
+    position: relative;
 
     .nav-logo {
       margin-top: 2vh;
@@ -84,10 +85,9 @@
     }
 
     .back-button {
-      position: fixed;
-      left: 24vw;
-      bottom: 20vh;
-      z-index: 1;
+      position: absolute;
+      right: 0;
+      bottom: 6vh;
     }
   }
 </style>
