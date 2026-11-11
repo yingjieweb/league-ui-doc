@@ -19,6 +19,14 @@
         <code class="js">{{sample.importing}}</code>
       </pre>
 
+      <h2>Global styles</h2>
+      <p>League UI examples assume that elements have no default margin or padding and use <code>box-sizing: border-box</code>.</p>
+      <pre><code class="css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</code></pre>
+
       <h2>Usage</h2>
       <p>Now, let's place some components in your Web APP!</p>
       <pre>
