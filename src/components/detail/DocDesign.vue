@@ -3,75 +3,24 @@
     <doc-post>
       <h1>Design</h1>
 
-      <!--Recommend Main Color-->
-      <h2>Recommend Main Color</h2>
-      <p>
-        Since the background colors of League of Legends are monotonous, if you are developing your own projects using the League UI framework,
-        you can also use the following colors to provide a consistent look and feel for the products you build.
-      </p>
-      <lol-row :gutter="20" class="color">
-        <lol-col :span="6">
-          <div class="col-item" style="background:#409EFF;">#409EFF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#53A8FF;">#53A8FF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#66B1FF;">#66B1FF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#79BBFF;">#79BBFF</div>
-        </lol-col>
-      </lol-row>
-      <lol-row :gutter="20" class="color">
-        <lol-col :span="6">
-          <div class="col-item" style="background:#8CC5FF;">#8CC5FF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#A0CFFF;">#A0CFFF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#B3D8FF;">#B3D8FF</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background:#C6E2FF;">#C6E2FF</div>
-        </lol-col>
-      </lol-row>
+      <p>League UI pairs dark blue surfaces with warm text and gold accents. Use brighter colors for focus and status so those states stand out.</p>
 
-      <!--Recommend Auxiliary Color-->
-      <h2>Recommend Auxiliary Color</h2>
-      <p>Field views other than the main color need to be used in different scenarios (for example, dangerous colors for dangerous operations)</p>
-      <lol-row :gutter="20" class="color">
-        <lol-col :span="6">
-          <div class="col-item" style="background: #33A03D;">#33A03D</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #FFC429;">#FFC429</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #DE4561;">#DE4561</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #909399;">#909399</div>
-        </lol-col>
-      </lol-row>
-      <lol-row :gutter="20" class="color">
-        <lol-col :span="6">
-          <div class="col-item" style="background: #F0F9EB;">#F0F9EB</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #FAECD8;">#FAECD8</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #FDE2E2;">#FDE2E2</div>
-        </lol-col>
-        <lol-col :span="6">
-          <div class="col-item" style="background: #E9E9EB;">#E9E9EB</div>
-        </lol-col>
-      </lol-row>
+      <section v-for="group in palettes" :key="group.title" class="palette">
+        <h2>{{ group.title }}</h2>
+        <p>{{ group.description }}</p>
+        <ul class="palette-grid">
+          <li v-for="color in group.colors" :key="color.name" class="palette-card">
+            <div class="palette-swatch" :style="{ backgroundColor: color.value }" aria-hidden="true"></div>
+            <div class="palette-label">
+              <span>{{ color.name }}</span>
+              <code>{{ color.value }}</code>
+            </div>
+          </li>
+        </ul>
+      </section>
 
       <h2>Background</h2>
-      <p>If you want to develop your project with League UI components, you may need to add a background. Here's some examples.</p>
+      <p>Champion artwork works well on landing pages and in previews. Keep text and controls on a solid surface or use a dark overlay for readability.</p>
       <lol-row class="bg" :gutter="20">
         <lol-col :span="6" v-for="bg in background" :key="bg">
           <img :src="bg" alt="background img">
@@ -82,18 +31,36 @@
 </template>
 
 <script>
-  // import {LolButton, LolRow, LolCol} from 'league-ui'
-  // import 'league-ui/dist/index.css'
-
   export default {
     name: "DocDesign",
-    components: {
-      // 'lol-button': LolButton,
-      // 'lol-row': LolRow,
-      // 'lol-col': LolCol,
-    },
     data() {
       return {
+        palettes: [
+          {
+            title: "Site Palette",
+            description: "Use navy for page and panel surfaces, ivory for text, and gold for selected navigation and primary links.",
+            colors: [
+              { name: "Page", value: "#0A1018" },
+              { name: "Panel", value: "#101A25" },
+              { name: "Border", value: "#2D3B49" },
+              { name: "Text", value: "#EEE7D8" },
+              { name: "Muted Text", value: "#AAB6C4" },
+              { name: "Gold", value: "#D5B77E" },
+            ],
+          },
+          {
+            title: "Interaction Colors",
+            description: "Use gold to emphasize primary actions and cyan to indicate keyboard focus. Pair status colors with a label or icon so their meaning is clear.",
+            colors: [
+              { name: "Primary Action", value: "#C8AA6E" },
+              { name: "Success", value: "#6FA991" },
+              { name: "Warning", value: "#D89450" },
+              { name: "Danger", value: "#C8777E" },
+              { name: "Info", value: "#7494AB" },
+              { name: "Focus", value: "#87E4EB" },
+            ],
+          },
+        ],
         background: [
           require('../../assets/images/fizz.jpg'),
           require('../../assets/images/caitlyn.png'),
@@ -109,31 +76,49 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  .doc-design {
-    .suit {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 50px;
-      background: $--color-white;
-    }
-    .color {
-      margin-bottom: 10px;
-      .col-item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-        height: 50px;
-        color: white;
-      }
-    }
-    .bg {
-      img {
-        width: 100%;
-        border-radius: 4px;
-      }
-    }
-  }
+<style scoped>
+.palette {
+  margin: 32px 0;
+}
+
+.palette h2 {
+  font: 700 clamp(23px, 3vw, 30px)/1.25 var(--site-display);
+  border-bottom-color: var(--site-border);
+}
+
+.palette p { color: var(--site-muted); }
+
+.palette ul.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.palette-grid .palette-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--site-border);
+  border-radius: 4px;
+  background: var(--site-panel);
+}
+
+.palette-swatch { height: 52px; border-bottom: 1px solid var(--site-border); }
+
+.palette-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+
+.bg img { width: 100%; border-radius: 4px; }
+
+@media (max-width: 1000px) {
+  .palette ul.palette-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 </style>
