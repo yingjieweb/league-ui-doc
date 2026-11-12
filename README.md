@@ -1,7 +1,16 @@
 # League UI Documentation
 
-&nbsp;&nbsp;&nbsp;&nbsp;This repo is the official documentation website for [League UI](https://github.com/yingjieweb/league-ui).
-It mainly shows you some basic component usage. [Click here to view it](https://github.com/yingjieweb/league-ui).
- 
- ## Summoner's Rift
- ![](https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/en-us/production/en-us/static/base-2x-1f52ee2c1820c7cfe9031a6f7524c7b5.png)
+Documentation and interactive examples for League UI, a Vue component library inspired by League of Legends.
+
+[Browse the documentation](https://yingjieweb.github.io/league-ui-doc/) · [View the component library](https://github.com/yingjieweb/league-ui)
+
+## Run the site locally
+
+From the `league-ui-doc` directory, install the dependencies and start the development server.
+
+```sh
+npm ci
+npm run serve
+```
+
+Open the local URL printed in your terminal. To create a production build, run `npm run build`.
