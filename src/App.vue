@@ -8,11 +8,18 @@
           <span>League UI</span>
         </router-link>
         <nav class="site-links" aria-label="Main navigation">
-          <router-link to="/start" exact>Get Started</router-link>
-          <router-link to="/components/design" :class="{ 'is-current': isComponentPage }">Components</router-link>
-          <router-link to="/training" exact>Training</router-link>
+          <router-link
+            v-for="link in mainLinks"
+            :key="link.path"
+            :to="link.path"
+            :class="{ 'is-current': link.path === '/components/design' && isComponentPage }"
+            exact
+          >{{ link.label }}</router-link>
         </nav>
-        <a class="github-link" href="https://github.com/yingjieweb/league-ui">GitHub <span aria-hidden="true">↗</span></a>
+        <nav class="site-meta-links" aria-label="Author and project">
+          <router-link to="/social" exact>Author</router-link>
+          <a href="https://github.com/yingjieweb/league-ui">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
         <button
           ref="menu"
           class="menu-toggle"
@@ -22,14 +29,20 @@
           @click="menuOpen = !menuOpen"
         >{{ menuOpen ? 'Close' : 'Menu' }}</button>
       </div>
-      <div v-if="menuOpen" id="mobile-menu" class="mobile-menu">
+      <div v-show="menuOpen" id="mobile-menu" class="mobile-menu">
         <nav class="mobile-links" aria-label="Main navigation">
-          <router-link to="/start" @click.native="closeMenu()">Get Started</router-link>
-          <router-link to="/components/design" @click.native="closeMenu()">Components</router-link>
-          <router-link to="/training" @click.native="closeMenu()">Training</router-link>
-          <a href="https://github.com/yingjieweb/league-ui">GitHub ↗</a>
+          <router-link
+            v-for="link in mainLinks"
+            :key="link.path"
+            :to="link.path"
+            :class="{ 'is-current': link.path === '/components/design' && isComponentPage }"
+            exact
+            @click.native="closeMenu()"
+          >{{ link.label }}</router-link>
+          <router-link to="/social" exact @click.native="closeMenu()">Author</router-link>
+          <a href="https://github.com/yingjieweb/league-ui">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
-        <DocNav v-if="!isHome" @navigate="closeMenu()" />
+        <DocNav :show-overview="false" @navigate="closeMenu()" />
       </div>
     </header>
 
@@ -41,18 +54,6 @@
         <router-view />
       </main>
     </div>
-
-    <footer class="site-footer">
-      <div>
-        <router-link to="/intro">League UI</router-link>
-        <p>An independent fan project featuring artwork by Riot Games. Riot Games does not endorse or sponsor it.</p>
-      </div>
-      <nav aria-label="More about League UI">
-        <router-link to="/social">Social</router-link>
-        <router-link to="/promotion">Promotion</router-link>
-        <a href="https://github.com/yingjieweb/league-ui-doc">Docs source ↗</a>
-      </nav>
-    </footer>
   </div>
 </template>
 
@@ -63,7 +64,15 @@ export default {
   name: "App",
   components: { DocNav },
   data() {
-    return { menuOpen: false };
+    return {
+      menuOpen: false,
+      mainLinks: [
+        { label: "Get Started", path: "/start" },
+        { label: "Components", path: "/components/design" },
+        { label: "Training", path: "/training" },
+        { label: "Promotion", path: "/promotion" },
+      ],
+    };
   },
   computed: {
     isHome() {
@@ -145,7 +154,7 @@ body {
   padding: 0 var(--site-gutter);
   display: flex;
   align-items: center;
-  gap: clamp(24px, 5vw, 76px);
+  gap: clamp(22px, 4vw, 64px);
 }
 
 .site-brand {
@@ -173,7 +182,7 @@ body {
 .site-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: clamp(12px, 2vw, 30px);
 
   a {
     display: flex;
@@ -191,12 +200,16 @@ body {
   }
 }
 
-.github-link {
+.site-meta-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   margin-left: auto;
   white-space: nowrap;
-  color: var(--site-text);
   font-size: 13px;
-  &:hover { color: var(--site-gold); }
+
+  a { color: var(--site-text); }
+  a:hover, a.router-link-exact-active { color: var(--site-gold); }
 }
 
 .menu-toggle, .mobile-menu { display: none; }
@@ -225,26 +238,9 @@ body {
   border-left: 1px solid var(--site-border);
 }
 
-.site-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px 36px;
-  padding: 28px var(--site-gutter);
-  border-top: 1px solid var(--site-border);
-  color: var(--site-muted);
-  font-size: 13px;
-
-  a { color: var(--site-text); }
-  a:hover { color: var(--site-gold); }
-  p { margin-top: 5px; }
-  nav { display: flex; flex-wrap: wrap; gap: 20px; }
-}
-
 @media (max-width: 820px) {
   :root { --site-header-height: 60px; }
-  .site-links, .github-link, .docs-sidebar { display: none; }
+  .site-links, .site-meta-links, .docs-sidebar { display: none; }
   .menu-toggle {
     display: block;
     margin-left: auto;
@@ -267,9 +263,13 @@ body {
     gap: 4px;
 
     a { padding: 6px 10px; color: var(--site-text); }
-    a:hover, a.router-link-exact-active { color: var(--site-gold); }
+    a:hover, a.router-link-exact-active, a.is-current { color: var(--site-gold); }
   }
-  .mobile-menu .component-nav { margin-top: 18px; }
+  .mobile-menu .component-nav {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--site-border);
+  }
   .docs-layout { display: block; }
   .docs-main { padding: 32px 0 48px; border: 0; }
 }

@@ -34,6 +34,8 @@
         </router-link>
       </div>
     </section>
+
+    <p class="intro-attribution">An independent fan project featuring artwork by Riot Games. Riot Games does not endorse or sponsor it.</p>
   </div>
 </template>
 
@@ -160,6 +162,14 @@ export default {
 .intro-card h3 { font: 700 21px/1.2 var(--site-display); }
 .intro-card p { margin-top: 6px; color: var(--site-muted); font-size: 13px; }
 .intro-card__arrow { position: absolute; right: 15px; bottom: 17px; color: var(--site-gold); }
+
+.intro-attribution {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 var(--site-gutter) 24px;
+  color: var(--site-muted);
+  font-size: 13px;
+}
 
 @media (max-width: 680px) {
   .intro-hero__inner { align-items: end; min-height: 530px; padding-top: 245px; padding-bottom: 33px; }

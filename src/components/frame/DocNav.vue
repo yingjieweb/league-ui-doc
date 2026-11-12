@@ -1,6 +1,6 @@
 <template>
   <nav class="component-nav" aria-label="Component documentation">
-    <div v-for="group in groups" :key="group.title" class="component-nav__group">
+    <div v-for="group in visibleGroups" :key="group.title" class="component-nav__group">
       <p>{{ group.title }}</p>
       <ul>
         <li v-for="link in group.links" :key="link.path">
@@ -14,6 +14,17 @@
 <script>
 export default {
   name: "DocNav",
+  props: {
+    showOverview: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  computed: {
+    visibleGroups() {
+      return this.showOverview ? this.groups : this.groups.slice(1);
+    },
+  },
   data() {
     return {
       groups: [
