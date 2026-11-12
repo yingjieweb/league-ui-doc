@@ -230,6 +230,16 @@ body {
   max-height: calc(100vh - var(--site-header-height));
   overflow: auto;
   padding: 28px 18px 32px 0;
+  color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: #556477 transparent;
+}
+
+.docs-sidebar::-webkit-scrollbar { width: 6px; }
+.docs-sidebar::-webkit-scrollbar-track { background: transparent; }
+.docs-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #556477;
 }
 
 .docs-main {
