@@ -3,6 +3,23 @@
     <doc-post>
       <h1>Button</h1>
 
+      <section v-if="showLockDemo" class="lock-demo" aria-labelledby="lock-demo-title">
+        <img class="lock-demo__portrait" src="../../assets/images/irelia.jpg" alt="">
+        <div class="lock-demo__details">
+          <h2 id="lock-demo-title">Irelia</h2>
+          <p role="status">{{ lockStatus }}</p>
+          <div class="lock-demo__actions">
+            <lol-button
+              :disabled="locking || locked"
+              :is-loading="locking"
+              :icon-name="locking ? 'loading' : undefined"
+              @click="lockChampion"
+            >{{ locking ? 'Locking in…' : locked ? 'Locked in' : 'Lock in' }}</lol-button>
+            <lol-button type="info" @click="resetLock">{{ locked ? 'Reset' : 'Cancel' }}</lol-button>
+          </div>
+        </div>
+      </section>
+
       <!--Button Types-->
       <h2>Button Types</h2>
       <p>There are 5 button types: <code>primary</code>, <code>success</code>, <code>warning</code>, <code>info</code>, <code>danger</code>.</p>
@@ -77,6 +94,12 @@
         <code class="html">{{sample.group}}</code>
       </pre>
 
+      <template v-if="showLockDemo">
+        <h2>Link Button</h2>
+        <p>Set <code>href</code> to render a link with Button styling. Standard link attributes such as <code>target</code> and <code>rel</code> are supported.</p>
+        <lol-button href="https://github.com/yingjieweb/league-ui" target="_blank" rel="noopener noreferrer">View on GitHub ↗</lol-button>
+      </template>
+
       <!--Properties-->
       <h2>Properties</h2>
       <table>
@@ -96,6 +119,12 @@
         <tr>
           <td>type</td><td>Set type of LolButton</td><td>String</td><td>"primary"</td>
         </tr>
+        <tr v-if="showLockDemo">
+          <td>href</td><td>Render as a link to this URL</td><td>String</td><td>-</td>
+        </tr>
+        <tr v-if="showLockDemo">
+          <td>disabled</td><td>Prevent mouse and keyboard activation</td><td>Boolean</td><td>false</td>
+        </tr>
         </tbody>
       </table>
     </doc-post>
@@ -104,25 +133,82 @@
 
 <script>
   import sample from "../../assets/samples/button"
-  // import {LolButton, LolButtonGroup} from 'league-ui'
-  // import 'league-ui/dist/index.css'
 
   export default {
     name: "DocButton",
-    components: {
-      // 'lol-button': LolButton,
-      // 'lol-button-group': LolButtonGroup
-    },
     data() {
       return {
         sample,
-        isLoading: true
+        isLoading: true,
+        showLockDemo: __LEAGUE_UI_LOCAL__,
+        locking: false,
+        locked: false,
+        lockTimer: null,
+        lockStatus: 'Ready to lock in'
+      }
+    },
+    beforeDestroy() {
+      clearTimeout(this.lockTimer)
+    },
+    methods: {
+      lockChampion() {
+        if (this.locking || this.locked) return
+        this.locking = true
+        this.lockStatus = 'Locking in Irelia'
+        this.lockTimer = setTimeout(() => {
+          this.lockTimer = null
+          this.locking = false
+          this.locked = true
+          this.lockStatus = 'Irelia is locked in'
+        }, 850)
+      },
+      resetLock() {
+        clearTimeout(this.lockTimer)
+        this.lockTimer = null
+        this.locking = false
+        this.locked = false
+        this.lockStatus = 'Ready to lock in'
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .lock-demo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    padding: clamp(1rem, 4vw, 2rem);
+    color: #f0e6d2;
+    border: 1px solid #74613d;
+    background: radial-gradient(ellipse at top left, #20303c, #0a1119 65%);
+
+    &__portrait {
+      width: 6rem;
+      height: 6rem;
+      object-fit: cover;
+      border: 1px solid #c8aa6e;
+    }
+
+    &__details > h2 {
+      margin: 0 0 0.25rem;
+      padding: 0;
+      border: 0;
+      font-family: Georgia, serif;
+    }
+
+    &__details > p { margin-bottom: 0.75rem; }
+
+    &__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      > .lol-button { margin: 0; }
+    }
+  }
+
   .doc-button {
     .samples {
       margin-bottom: 8px;
